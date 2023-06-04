@@ -1,1 +1,1 @@
-# TODO_NOTES
+# TODO_NOTES - educational project to learning DRF
