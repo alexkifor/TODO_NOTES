@@ -14,8 +14,7 @@ class Project(models.Model):
     users = models.ManyToManyField(User)
 
     def __str__(self):
-        return self.name
-
+        return f'{self.name}'
 
 class Note(models.Model):
     """
@@ -25,5 +24,5 @@ class Note(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
     created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
     is_active = models.BooleanField(default=True)
