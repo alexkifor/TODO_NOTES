@@ -1,7 +1,8 @@
 # Byte-compiled / optimized / DLL files
+/.idea
 __pycache__/
-*.py[cod]
-*$py.class
+/todo_notes/db.sqlite3
+/todo_notes/.env
 
 # C extensions
 *.so

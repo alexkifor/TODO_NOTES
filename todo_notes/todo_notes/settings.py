@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rest_framework',
     'corsheaders',
+    'django_filters',
 
     # custom apps
     'users',
@@ -56,7 +57,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 ROOT_URLCONF = 'todo_notes.urls'
 
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'todo_notes.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -91,7 +91,7 @@ DATABASES = {
 
 
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
@@ -124,14 +124,9 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
+# https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
 
@@ -139,7 +134,6 @@ CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000'
 ]
-
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
@@ -150,5 +144,8 @@ REST_FRAMEWORK = {
         'djangorestframework_camel_case.parser.CamelCaseFormParser',
         'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
         'djangorestframework_camel_case.parser.CamelCaseJSONParser',
-    ]
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 100,
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
