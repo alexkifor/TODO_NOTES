@@ -12,13 +12,13 @@ const Menu = () => {
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
                     <Link to='/users' className="nav-item nav-link active">
-                        List of all users
+                        Users
                     </Link>
                     <Link to='/projects' className="nav-item nav-link active">
-                        List of all projects
+                        Projects
                     </Link>
                     <Link to='/notes' className="nav-item nav-link active">
-                        List of all notes
+                        Notes
                     </Link>
                 </div>
             </div>
