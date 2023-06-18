@@ -1,0 +1,36 @@
+POST http://localhost:8000/api-token-auth/
+Content-Type: application/json
+
+{
+  "username": "user0",
+  "password": "user"
+}
+
+###
+POST http://localhost:8000/api-token-auth/
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "user"
+}
+
+###
+POST http://localhost:8000/api-token-auth/
+Content-Type: application/json
+
+{
+  "username": "user2",
+  "password": "user"
+}
+
+###
+POST http://localhost:8000/api-token-auth/
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+###
