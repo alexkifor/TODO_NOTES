@@ -11,3 +11,4 @@ mixer==7.1.2
 drf_yasg==1.21.6
 graphene==2.1.9
 graphene-django==2.15.0
+psycopg2==2.8.6

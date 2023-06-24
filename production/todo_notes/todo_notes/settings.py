@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-&pg^+9^(48eceg7met^4k^_n%*v$)gk+6bv9bnxr(06-nbelqt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -88,10 +88,16 @@ WSGI_APPLICATION = 'todo_notes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'db',
+        'PORT': '5432',
+        'NAME': 'todo_notes',
+        'USER': 'admin',
+        'PASSWORD': 'admin',
     }
 }
+
+
 
 
 # Password validation
@@ -135,10 +141,10 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'users.User'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000'
-]
+# CORS_ALLOWED_ORIGINS = [
+#     'http://localhost:3000',
+#     'http://127.0.0.1:3000'
+# ]
 
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [

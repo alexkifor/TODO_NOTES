@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = 'Create Superuser and some test users'
 
     def add_arguments(self, parser):
-        parser.add_argument('count', type=int)
+        parser.add_argument('count',  nargs='?', type=int, default=5)
 
     def handle(self, *args, **options):
         # Удаляем все пользоватлелей
